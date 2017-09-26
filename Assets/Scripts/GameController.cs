@@ -94,6 +94,7 @@ public class GameController : MonoBehaviour {
 				SetMinTimerInvoker (archerInvoker);				
 			}
 			if (player.lvl > 6){
+				Debug.Log (player.lvl);
 				SetMinTimerInvoker (assassinInvoker);				
 			}
 			if (player.lvl > 9){

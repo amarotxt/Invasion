@@ -26,7 +26,7 @@ public class Warrior : MonoBehaviour {
 		drop = (GameObject)Resources.Load ("Prefabs/Drops/DropLife", typeof(GameObject));
 		playerstatus = player.GetComponent<Player> ();
 		// speedMoves,health, damege, range, armor, player;
-		warrior =new WarriorCommands(speedMoves+Random.Range(0,(int)Mathf.Log(playerstatus.lvl)),
+		warrior =new WarriorCommands(speedMoves,
 			health+(playerstatus.fullHealth*0.1f),
 			damage+Random.Range(playerstatus.armor*0.2f, playerstatus.armor*0.4f)+(int)Mathf.Log(playerstatus.lvl+1)+1,
 			range,
