@@ -26,9 +26,10 @@ public class Assassino : MonoBehaviour {
 		drop = (GameObject)Resources.Load ("Prefabs/Drops/DropLife", typeof(GameObject));
 		playerstatus = player.GetComponent<Player> ();
 		// speedMoves,health, damege, range, armor, player;
+		damage = damage+(Random.Range(playerstatus.armor*0.4f, playerstatus.armor*0.6f)+((int)Mathf.Log(playerstatus.lvl+1)+1));
 		assassin =new AssassinoCommands(speedMoves,
 			health+(playerstatus.fullHealth*0.2f),
-			damage+(Random.Range(playerstatus.armor*0.3f, playerstatus.armor*0.5f)+((int)Mathf.Log(playerstatus.lvl+1)+1)),
+			damage,
 			range,
 			armor+(playerstatus.armor*0.1f),
 			player.GetComponent<Player>());

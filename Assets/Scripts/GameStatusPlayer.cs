@@ -38,7 +38,7 @@ public class GameStatusPlayer : MonoBehaviour {
 		helthPlayerText.text = player.health.ToString ("00.00");
 		if (player.lvl > lvlUp){
 			playSatusPainel.SetActive (true);
-			extraPoints += 5+(int)Mathf.Log(player.lvl);
+			extraPoints += 4+(int)Mathf.Log(player.lvl);
 			extraPointsText.text = extraPoints.ToString();
 			lvlUp = player.lvl;
 			Time.timeScale = 0;

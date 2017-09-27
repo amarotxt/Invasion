@@ -26,9 +26,10 @@ public class Cart : MonoBehaviour {
 		drop = (GameObject)Resources.Load ("Prefabs/Drops/DropLife", typeof(GameObject));
 		playerstatus = player.GetComponent<Player> ();
 		// speedMoves,health, damege, range, armor, player;
+		damage = damage + (Random.Range(playerstatus.armor*0.1f, playerstatus.armor*0.5f)+((int)Mathf.Log(playerstatus.lvl+1)+1));
 		cart =new WarriorCommands(speedMoves,
 			health+(playerstatus.fullHealth*0.1f),
-			damage+(Random.Range(playerstatus.armor*0.1f, playerstatus.armor*0.5f)+((int)Mathf.Log(playerstatus.lvl+1)+1)),
+			damage,
 			range,
 			armor+(playerstatus.armor*0.1f),
 			player.GetComponent<Player>());

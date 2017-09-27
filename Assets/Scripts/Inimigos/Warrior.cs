@@ -26,16 +26,13 @@ public class Warrior : MonoBehaviour {
 		drop = (GameObject)Resources.Load ("Prefabs/Drops/DropLife", typeof(GameObject));
 		playerstatus = player.GetComponent<Player> ();
 		// speedMoves,health, damege, range, armor, player;
-		warrior =new WarriorCommands(speedMoves,
-			health+(playerstatus.fullHealth*0.1f),
-			damage+Random.Range(playerstatus.armor*0.2f, playerstatus.armor*0.4f)+(int)Mathf.Log(playerstatus.lvl+1)+1,
-			range,
-			armor+Random.Range(playerstatus.damage*0.1f,playerstatus.damage*0.2f)+(int)Mathf.Log(playerstatus.lvl+1)+1,
-			player.GetComponent<Player>());
+		health = health+(playerstatus.fullHealth*0.1f);
+		damage = damage + Random.Range (playerstatus.armor * 0.2f, playerstatus.armor * 0.4f) + (int)Mathf.Log (playerstatus.lvl + 1) + 1;
+		armor = armor+Random.Range(playerstatus.damage*0.1f,playerstatus.damage*0.2f)+(int)Mathf.Log(playerstatus.lvl+1)+1;
+		warrior =new WarriorCommands(speedMoves, health, damage, range, armor,player.GetComponent<Player>());
 		healthBar = GetComponent<ControllerEnemyHealthBar>();
 		healthBar.ChangeHealthvalue (warrior.fullhealth, warrior.health);
 		points += playerstatus.lvl;
-
 		}
 	void FixedUpdate (	) {
 		timer += Time.deltaTime;

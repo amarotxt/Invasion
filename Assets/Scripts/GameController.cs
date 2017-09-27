@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
 
 		warriorInvoker = gameObject.AddComponent<InvokerEnemy>();
-		warriorInvoker.timeEnemy = 4;
-		warriorInvoker.minRamdonTimerEnemy = 3.5f;
+		warriorInvoker.timeEnemy = 5;
+		warriorInvoker.minRamdonTimerEnemy = 4.5f;
 
 		archerInvoker = gameObject.AddComponent<InvokerEnemy> ();
 		archerInvoker.timeEnemy = 6;
@@ -33,8 +33,8 @@ public class GameController : MonoBehaviour {
 		assassinInvoker.minRamdonTimerEnemy = 5.5f;
 
 		tankInvoker = gameObject.AddComponent<InvokerEnemy> ();
-		tankInvoker.timeEnemy = 12;
-		tankInvoker.minRamdonTimerEnemy = 10.5f;
+		tankInvoker.timeEnemy = 10;
+		tankInvoker.minRamdonTimerEnemy = 8.5f;
 
 		cartInvoker = gameObject.AddComponent<InvokerEnemy> ();
 		cartInvoker.timeEnemy = 15;
@@ -60,19 +60,19 @@ public class GameController : MonoBehaviour {
 					enemies.Add(archerInvoker.InvokeEnemy (archer));
 				}
 			}
-			if (player.lvl >= 5){
+			if (player.lvl >= 6){
 				assassinInvoker.timeEnemyInvoker += Time.deltaTime;
 				if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy){
 					enemies.Add(assassinInvoker.InvokeEnemy (assassin));
 				}
 			}
-			if (player.lvl >= 7){
+			if (player.lvl >= 8){
 				tankInvoker.timeEnemyInvoker += Time.deltaTime;
 				if (tankInvoker.timeEnemyInvoker >= tankInvoker.timeEnemy){
 					enemies.Add(tankInvoker.InvokeEnemy (tank));
 				}
 			}
-			if (player.lvl >= 9){
+			if (player.lvl >= 12){
 				cartInvoker.timeEnemyInvoker += Time.deltaTime;
 				if (cartInvoker.timeEnemyInvoker >= cartInvoker.timeEnemy){
 					enemies.Add(cartInvoker.InvokeEnemy (cart));
@@ -94,7 +94,6 @@ public class GameController : MonoBehaviour {
 				SetMinTimerInvoker (archerInvoker);				
 			}
 			if (player.lvl > 6){
-				Debug.Log (player.lvl);
 				SetMinTimerInvoker (assassinInvoker);				
 			}
 			if (player.lvl > 9){
