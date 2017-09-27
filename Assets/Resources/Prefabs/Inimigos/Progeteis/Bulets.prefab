@@ -277,7 +277,7 @@ MonoBehaviour:
   damage: 20
   armor: 0
   health: 0
-  explosao: {fileID: 1287499414622822, guid: e2140d3bf27c0dc43b60a183ee2ad2cf, type: 2}
+  explosao: {fileID: 1471953467826830, guid: 1a128a960ea91ee4eba1cef2a70702fd, type: 2}
 --- !u!198 &198708196215237992
 ParticleSystem:
   m_ObjectHideFlags: 1

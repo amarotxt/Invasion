@@ -18,6 +18,7 @@ public class Assassino : MonoBehaviour {
 	Player playerstatus;
 	GameObject drop;
 	public GameObject explosao;
+	public GameObject explosaoDano;
 
 	ControllerEnemyHealthBar healthBar;
 	// Use this for initialization
@@ -44,6 +45,9 @@ public class Assassino : MonoBehaviour {
 
 		// If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
 		if(timer >= timeBetweenAttacks){
+			if (this.range >= distanceToPlayer) {
+				Instantiate (explosaoDano, new Vector3(transform.position.x, transform.position.y+12, gameObject.transform.position.z), Quaternion.identity);
+			}
 			assassin.Attack (distanceToPlayer);
 			timer = 0f;
 		}

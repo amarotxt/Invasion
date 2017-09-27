@@ -210,6 +210,8 @@ MonoBehaviour:
   health: 50
   timeBetweenAttacks: 2
   explosao: {fileID: 1197299893286602, guid: 59ac2e0dd3c1bd04fb1c29a83426f979, type: 2}
+  explosaoDano: {fileID: 1197299893286602, guid: d42b160ab1388444d98f301059c4bba1,
+    type: 2}
 --- !u!114 &114997009364410146
 MonoBehaviour:
   m_ObjectHideFlags: 1

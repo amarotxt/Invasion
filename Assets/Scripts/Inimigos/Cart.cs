@@ -18,6 +18,7 @@ public class Cart : MonoBehaviour {
 	Player playerstatus;
 	GameObject drop;
 	public GameObject explosao;
+	public GameObject explosaoDano;
 
 	ControllerEnemyHealthBar healthBar;
 	// Use this for initialization
@@ -45,6 +46,7 @@ public class Cart : MonoBehaviour {
 		cart.Attack (distanceToPlayer);
 
 		if (range >= distanceToPlayer){
+			Instantiate (explosaoDano, new Vector3(transform.position.x, transform.position.y+12,transform.position.z), Quaternion.identity);
 			Destroy (gameObject);
 			cart.health = 0;
 			healthBar.ChangeHealthvalue (cart.fullhealth, cart.health);
