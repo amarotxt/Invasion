@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour {
 		enemies = new List<GameObject>();
 		ControllerDamagePopup.Initialize ();		 
 	}
+
 	void Update () {
 		CheckLvlMinTimeInvoker ();	
 
@@ -50,26 +51,70 @@ public class GameController : MonoBehaviour {
 		if (maxEnemies > enemies.Count){
 			if (player.lvl >= 0){
 				warriorInvoker.timeEnemyInvoker += Time.deltaTime;
-				if (warriorInvoker.timeEnemyInvoker >= warriorInvoker.timeEnemy){
-					enemies.Add(warriorInvoker.InvokeEnemy (warrior));
+
+				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.2))) ) {
+					
+					if (warriorInvoker.timeEnemyInvoker >= warriorInvoker.timeEnemy) {
+						
+
+						enemies.Add (warriorInvoker.InvokeEnemy (warrior));
+					}
+				} else {
+					if (warriorInvoker.timeEnemyInvoker >= warriorInvoker.timeEnemy) {
+						int enimiesInvoker = (int)((player.changelvl * 0.2) * 0.1f);
+						if (enimiesInvoker > 10){
+							enimiesInvoker = 10;
+						}
+						enemies.AddRange (warriorInvoker.InvokeEnemyWave (warrior, enimiesInvoker));
+						}
 				}
 			}
 			if (player.lvl >= 3){
 				archerInvoker.timeEnemyInvoker += Time.deltaTime;				
-				if (archerInvoker.timeEnemyInvoker >= archerInvoker.timeEnemy){
-					enemies.Add(archerInvoker.InvokeEnemy (archer));
+				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.3)))) {
+					if (archerInvoker.timeEnemyInvoker >= archerInvoker.timeEnemy) {
+						enemies.Add (archerInvoker.InvokeEnemy (archer));
+					}
+				} else {
+					if (archerInvoker.timeEnemyInvoker >= archerInvoker.timeEnemy) {
+						int enimiesInvoker = (int)((player.changelvl * 0.3) * 0.1f);
+						if (enimiesInvoker > 10){
+							enimiesInvoker = 10;
+						}
+						enemies.AddRange (archerInvoker.InvokeEnemyWave (archer, enimiesInvoker));
+					}
 				}
 			}
 			if (player.lvl >= 6){
-				assassinInvoker.timeEnemyInvoker += Time.deltaTime;
-				if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy){
-					enemies.Add(assassinInvoker.InvokeEnemy (assassin));
+				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.1)))) {
+					assassinInvoker.timeEnemyInvoker += Time.deltaTime;
+					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
+						enemies.Add (assassinInvoker.InvokeEnemy (assassin));
+					}
+				}else {
+					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
+						int enimiesInvoker = (int)((player.changelvl * 0.1) * 0.1f);
+						if (enimiesInvoker > 10){
+							enimiesInvoker = 10;
+						}
+						enemies.AddRange (assassinInvoker.InvokeEnemyWave (assassin, enimiesInvoker));
+					}
 				}
 			}
 			if (player.lvl >= 8){
-				tankInvoker.timeEnemyInvoker += Time.deltaTime;
-				if (tankInvoker.timeEnemyInvoker >= tankInvoker.timeEnemy){
-					enemies.Add(tankInvoker.InvokeEnemy (tank));
+				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.4)))) {
+					tankInvoker.timeEnemyInvoker += Time.deltaTime;
+					if (tankInvoker.timeEnemyInvoker >= tankInvoker.timeEnemy) {
+						enemies.Add (tankInvoker.InvokeEnemy (tank));
+					}
+				} else {
+					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
+						int enimiesInvoker = (int)((player.changelvl * 0.1) * 0.1f);
+						if (enimiesInvoker > 10){
+							enimiesInvoker = 10;
+						}
+						enemies.AddRange (tankInvoker.InvokeEnemyWave (tank, enimiesInvoker));
+					}
 				}
 			}
 			if (player.lvl >= 12){
