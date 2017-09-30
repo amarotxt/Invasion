@@ -33,12 +33,12 @@ public class GameController : MonoBehaviour {
 		assassinInvoker.minRamdonTimerEnemy = 5.5f;
 
 		tankInvoker = gameObject.AddComponent<InvokerEnemy> ();
-		tankInvoker.timeEnemy = 10;
-		tankInvoker.minRamdonTimerEnemy = 8.5f;
+		tankInvoker.timeEnemy = 16;
+		tankInvoker.minRamdonTimerEnemy = 14.5f;
 
 		cartInvoker = gameObject.AddComponent<InvokerEnemy> ();
-		cartInvoker.timeEnemy = 15;
-		cartInvoker.minRamdonTimerEnemy = 12.5f;
+		cartInvoker.timeEnemy = 20;
+		cartInvoker.minRamdonTimerEnemy = 18.5f;
 
 		enemies = new List<GameObject>();
 		ControllerDamagePopup.Initialize ();		 
@@ -62,8 +62,8 @@ public class GameController : MonoBehaviour {
 				} else {
 					if (warriorInvoker.timeEnemyInvoker >= warriorInvoker.timeEnemy) {
 						int enimiesInvoker = (int)((player.changelvl * 0.2) * 0.1f);
-						if (enimiesInvoker > 10){
-							enimiesInvoker = 10;
+						if (enimiesInvoker > 8){
+							enimiesInvoker = Random.Range(8,10);
 						}
 						enemies.AddRange (warriorInvoker.InvokeEnemyWave (warrior, enimiesInvoker));
 						}
@@ -78,8 +78,8 @@ public class GameController : MonoBehaviour {
 				} else {
 					if (archerInvoker.timeEnemyInvoker >= archerInvoker.timeEnemy) {
 						int enimiesInvoker = (int)((player.changelvl * 0.3) * 0.1f);
-						if (enimiesInvoker > 10){
-							enimiesInvoker = 10;
+						if (enimiesInvoker > 7){
+							enimiesInvoker = Random.Range(6,9);
 						}
 						enemies.AddRange (archerInvoker.InvokeEnemyWave (archer, enimiesInvoker));
 					}
@@ -94,8 +94,8 @@ public class GameController : MonoBehaviour {
 				}else {
 					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
 						int enimiesInvoker = (int)((player.changelvl * 0.1) * 0.1f);
-						if (enimiesInvoker > 10){
-							enimiesInvoker = 10;
+						if (enimiesInvoker > 7){
+							enimiesInvoker = Random.Range(4, 7);
 						}
 						enemies.AddRange (assassinInvoker.InvokeEnemyWave (assassin, enimiesInvoker));
 					}
@@ -110,8 +110,8 @@ public class GameController : MonoBehaviour {
 				} else {
 					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
 						int enimiesInvoker = (int)((player.changelvl * 0.1) * 0.1f);
-						if (enimiesInvoker > 10){
-							enimiesInvoker = 10;
+						if (enimiesInvoker > 4){
+							enimiesInvoker = Random.Range(3,5);
 						}
 						enemies.AddRange (tankInvoker.InvokeEnemyWave (tank, enimiesInvoker));
 					}
