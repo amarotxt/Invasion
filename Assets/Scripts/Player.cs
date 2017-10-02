@@ -42,8 +42,8 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 		
 		timer += Time.deltaTime;
-//		lookMausePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.mousePosition.x,Input.mousePosition.y));
-		lookMausePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.GetTouch(0).position.x,Input.GetTouch(0).position.y));
+		lookMausePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.mousePosition.x,Input.mousePosition.y));
+//		lookMausePosition = Camera.main.ScreenToWorldPoint (new Vector3(Input.GetTouch(0).position.x,Input.GetTouch(0).position.y));
 		lookMausePosition.y = gameObject.transform.position.y;
 		gameObject.transform.LookAt (lookMausePosition);
 		if (Input.GetMouseButton(0)){
