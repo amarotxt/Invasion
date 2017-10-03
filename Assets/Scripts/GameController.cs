@@ -109,10 +109,11 @@ public class GameController : MonoBehaviour {
 					}
 				} else {
 					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
-						int enimiesInvoker = (int)((player.changelvl * 0.1) * 0.1f);
+						int  enimiesInvoker = (int)((player.changelvl * 0.1) * 0.1f);
 						if (enimiesInvoker > 4){
 							enimiesInvoker = Random.Range(3,5);
 						}
+						Debug.Log ("teste");
 						enemies.AddRange (tankInvoker.InvokeEnemyWave (tank, enimiesInvoker));
 					}
 				}
