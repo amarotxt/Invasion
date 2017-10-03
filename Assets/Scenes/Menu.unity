@@ -567,7 +567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.28964967, y: 0.53954}
   m_AnchorMax: {x: 0.3408759, y: 0.62200004}
-  m_AnchoredPosition: {x: 0.19999695, y: 0.39999962}
+  m_AnchoredPosition: {x: 0.19999695, y: 0.40000153}
   m_SizeDelta: {x: -1.5999985, y: -0.6000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382269790
@@ -911,7 +911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8976014, y: 0}
   m_AnchorMax: {x: 1, y: 0.14746287}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0.000011444092}
+  m_AnchoredPosition: {x: 0, y: 0.000011444092}
   m_SizeDelta: {x: 0.000030518, y: -0.000005722}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512266547
@@ -1266,7 +1266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22982483, y: 0.187}
   m_AnchorMax: {x: 0.33370075, y: 0.2791902}
-  m_AnchoredPosition: {x: 0.099998474, y: 0}
+  m_AnchoredPosition: {x: 0.099990845, y: 0}
   m_SizeDelta: {x: -0.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878848108
@@ -5020,7 +5020,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.45052555, y: 0.2888099}
   m_AnchorMax: {x: 0.5495257, y: 0.3346626}
-  m_AnchoredPosition: {x: 0.000002861023, y: 0.049999237}
+  m_AnchoredPosition: {x: 0.000002861023, y: 0.049995422}
   m_SizeDelta: {x: 0, y: 0.10001}
   m_Pivot: {x: 0.5, y: 0.49999988}
 --- !u!114 &1119790380
@@ -5110,7 +5110,7 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1.5}
   m_UseGraphicAlpha: 0
 --- !u!114 &1161526631
@@ -5145,7 +5145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: War Camp
+  m_Text: Invasion
 --- !u!222 &1161526632
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5184,7 +5184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3991752, y: 0.43600002}
   m_AnchorMax: {x: 0.5, y: 0.51500005}
-  m_AnchoredPosition: {x: -0.5, y: 0.100007534}
+  m_AnchoredPosition: {x: -0.5, y: 0.10000801}
   m_SizeDelta: {x: -1, y: 0.6000004}
   m_Pivot: {x: 0.5, y: 0.49999988}
 --- !u!114 &1239003198
@@ -5431,7 +5431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5306232, y: 0.49328858}
   m_AnchorMax: {x: 0.61510086, y: 0.6353557}
-  m_AnchoredPosition: {x: 0.27119827, y: 0.8052006}
+  m_AnchoredPosition: {x: 0.27119446, y: 0.80519867}
   m_SizeDelta: {x: -1.2720003, y: -1.3700008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375161503
@@ -5615,7 +5615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3991752, y: 0.49328858}
   m_AnchorMax: {x: 0.49120173, y: 0.652}
-  m_AnchoredPosition: {x: 0.07040024, y: 0.5000062}
+  m_AnchoredPosition: {x: 0.07040024, y: 0.5000076}
   m_SizeDelta: {x: 0.54999924, y: -0.5100002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443620971
@@ -5924,7 +5924,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Use your nave to protect your wall from enemy troops.
+  m_Text: 'Use your nave to protect your planet from enemy troops.
 
     Touch to shoot.'
 --- !u!222 &1620082053
@@ -6186,7 +6186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6578992, y: 0.49328858}
   m_AnchorMax: {x: 0.7607538, y: 0.66200006}
-  m_AnchoredPosition: {x: -0.20999908, y: 0.2570896}
+  m_AnchoredPosition: {x: -0.20999146, y: 0.2570877}
   m_SizeDelta: {x: -0.62000084, y: 0.5699997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798212724
@@ -6750,7 +6750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26617518, y: 0.43600002}
   m_AnchorMax: {x: 0.36652553, y: 0.51500005}
-  m_AnchoredPosition: {x: -0.30000305, y: 0.0000023841858}
+  m_AnchoredPosition: {x: -0.30000305, y: 0.0000019073486}
   m_SizeDelta: {x: -1, y: 0.6000004}
   m_Pivot: {x: 0.5, y: 0.49999988}
 --- !u!114 &2108740053
