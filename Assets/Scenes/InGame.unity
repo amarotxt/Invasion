@@ -4945,6 +4945,8 @@ MonoBehaviour:
   assassin: {fileID: 1746425640166136, guid: a4fc3352d9f47984da7cdcbf4c2fa204, type: 2}
   archer: {fileID: 1083879404355750, guid: 01cd579da5a20724e98d59d0b024d903, type: 2}
   cart: {fileID: 1746425640166136, guid: 5f30ec6e955845f46bc5189a37ff88d3, type: 2}
+  warriors:
+  - {fileID: 11400000, guid: 4d3280ad8e3c18944bca9e4caab192bf, type: 2}
 --- !u!1 &961936861
 GameObject:
   m_ObjectHideFlags: 0
@@ -6799,7 +6801,7 @@ GameObject:
   - component: {fileID: 2018445295}
   - component: {fileID: 2018445294}
   m_Layer: 0
-  m_Name: planet-295303_960_720
+  m_Name: planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,6 +7,11 @@ public class GameController : MonoBehaviour {
 	public GameObject warrior, tank, assassin, archer, cart;
 	int countEnemies;
 	List<GameObject> enemies;
+	public EnemyData[] warriors;
+//	public List<EnemyData> achers;
+//	public List<EnemyData> assassins;
+//	public List<EnemyData> tanks;
+
 	InvokerEnemy warriorInvoker, tankInvoker, assassinInvoker, archerInvoker, cartInvoker;
 	int maxEnemies;
 	int lvlPlayerChange; 
@@ -55,7 +60,7 @@ public class GameController : MonoBehaviour {
 				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.2))) ) {
 					
 					if (warriorInvoker.timeEnemyInvoker >= warriorInvoker.timeEnemy) {
-						
+						warrior.GetComponent<Warrior> ().enemyData = warriors [0];
 
 						enemies.Add (warriorInvoker.InvokeEnemy (warrior));
 					}
