@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00ad5b1ef84a9340bf3a6978624d0e5, type: 3}
+  m_Name: Cart
+  m_EditorClassIdentifier: 
+  speedMoves: 20
+  damage: 100
+  range: 6.9
+  armor: 0
+  health: 5
+  explosao: {fileID: 1197299893286602, guid: 8bf0846b9af17fc4abd01e37ed509a57, type: 2}
+  explosaoDano: {fileID: 1197299893286602, guid: 97ac5041f00a9b04db8498e902159639,
+    type: 2}
+  timeBetweenAttacks: 0.1
+  points: 15
+  nave: {fileID: 1590996676627584, guid: b1010176924998040a4afceb4b5df750, type: 2}

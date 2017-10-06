@@ -4947,6 +4947,16 @@ MonoBehaviour:
   cart: {fileID: 1746425640166136, guid: 5f30ec6e955845f46bc5189a37ff88d3, type: 2}
   warriors:
   - {fileID: 11400000, guid: 4d3280ad8e3c18944bca9e4caab192bf, type: 2}
+  - {fileID: 11400000, guid: 856adf9096df83d46a71b978af4adfe9, type: 2}
+  archers:
+  - {fileID: 11400000, guid: 0959a39accc4cf24c8dbc8d60137336d, type: 2}
+  - {fileID: 0}
+  assassins:
+  - {fileID: 11400000, guid: b65d252ceb0ff5c458900f5322e94929, type: 2}
+  tanks:
+  - {fileID: 11400000, guid: 0250383b656cd56438a5b5516abb71a0, type: 2}
+  carts:
+  - {fileID: 11400000, guid: 99773e2815093824585c9625b799ec60, type: 2}
 --- !u!1 &961936861
 GameObject:
   m_ObjectHideFlags: 0

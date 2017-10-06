@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00ad5b1ef84a9340bf3a6978624d0e5, type: 3}
+  m_Name: Archer
+  m_EditorClassIdentifier: 
+  speedMoves: 5.5
+  damage: 23
+  range: 0
+  armor: 3
+  health: 15
+  explosao: {fileID: 1471953467826830, guid: 138a690ead91fc3468121c63382ba14b, type: 2}
+  explosaoDano: {fileID: 1471953467826830, guid: 1a128a960ea91ee4eba1cef2a70702fd,
+    type: 2}
+  timeBetweenAttacks: 3.5
+  points: 15
+  nave: {fileID: 1858686392379880, guid: 9c6f0b8f9af6fa14d81c3eaf552f4377, type: 2}

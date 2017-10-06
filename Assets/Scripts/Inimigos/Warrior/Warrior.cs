@@ -34,14 +34,15 @@ public class Warrior : MonoBehaviour {
 		Instantiate (enemyData.nave,gameObject.transform);
 		}
 	void FixedUpdate (	) {
-		timer += Time.deltaTime;
+		if (distanceToPlayer <= enemyData.range) {
+			timer += Time.deltaTime;
+		}
 		distanceToPlayer = Vector3.Distance (new Vector3(player.transform.position.x,0),new Vector3( gameObject.transform.position.x,0));
 
 		// If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
 		if(timer >= enemyData.timeBetweenAttacks){
-			if (enemyData.range >= distanceToPlayer) {
-				Instantiate (enemyData.explosaoDano, new Vector3(transform.position.x, transform.position.y+12, gameObject.transform.position.z), Quaternion.identity);
-			}
+			Instantiate (enemyData.explosaoDano, new Vector3(transform.position.x, transform.position.y+12, gameObject.transform.position.z), Quaternion.identity);
+	
 			warrior.Attack (distanceToPlayer);
 			timer = 0f;
 		}

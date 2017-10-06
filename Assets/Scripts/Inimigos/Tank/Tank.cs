@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tank : MonoBehaviour {
-	public int points;
-	public float speedMoves;
-	public float damage;
-	public float range;
-	public float armor;
-	public float health;
+	public EnemyData enemyData;
 
-	public float timeBetweenAttacks;
+	int pointsInGame;
 	float timer;
+	float health, damage, armor;
 	float distanceToPlayer;
 	CommandsEnemies warrior;
 	GameObject player;
 	Player playerstatus;
 	GameObject drop;
-	public GameObject explosao;
-	public GameObject explosaoDano;
 
 	ControllerEnemyHealthBar healthBar;
 	// Use this for initialization
@@ -26,26 +20,30 @@ public class Tank : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		drop = (GameObject)Resources.Load ("Prefabs/Drops/DropLife", typeof(GameObject));
 		playerstatus = player.GetComponent<Player> ();
+
 		// speedMoves,health, damege, range, armor, player;
-		warrior =new WarriorCommands(speedMoves,
-			health+(playerstatus.fullHealth*0.3f+(int)Mathf.Log(playerstatus.lvl+1)+1),
-			damage+(Random.Range(playerstatus.armor*0.1f, playerstatus.armor*0.35f)+((int)Mathf.Log(playerstatus.lvl+1)+1)),
-			range,
-			armor+Random.Range(playerstatus.damage*0.25f,playerstatus.damage*0.4f)+(int)Mathf.Log(playerstatus.lvl+1)+1,
-			player.GetComponent<Player>());
+		health = enemyData.health+(playerstatus.fullHealth*0.3f+(int)Mathf.Log(playerstatus.lvl+1)+1);
+		damage = enemyData.damage+(Random.Range(playerstatus.armor*0.1f, playerstatus.armor*0.35f)+((int)Mathf.Log(playerstatus.lvl+1)+1));
+		armor = enemyData.armor+Random.Range(playerstatus.damage*0.25f,playerstatus.damage*0.4f)+(int)Mathf.Log(playerstatus.lvl+1)+1;
+		warrior =new WarriorCommands(enemyData.speedMoves, health, damage, enemyData.range, armor,player.GetComponent<Player>());
+
 		healthBar = GetComponent<ControllerEnemyHealthBar>();
 		healthBar.ChangeHealthvalue (warrior.fullhealth, warrior.health);
-		points += playerstatus.lvl;
+
+		pointsInGame += enemyData.points+playerstatus.lvl;
+		Instantiate (enemyData.nave,gameObject.transform);
 	}
 
 	void FixedUpdate (	) {
-		timer += Time.deltaTime;
+		if (distanceToPlayer <= enemyData.range) {
+			timer += Time.deltaTime;
+		}
 		distanceToPlayer = Vector3.Distance (new Vector3(player.transform.position.x,0),new Vector3( gameObject.transform.position.x,0));
 
 		// If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-		if(timer >= timeBetweenAttacks){
-			if (this.range >= distanceToPlayer) {
-				Instantiate (explosaoDano, new Vector3(transform.position.x, transform.position.y+12, gameObject.transform.position.z), Quaternion.identity);
+	if(timer >= enemyData.timeBetweenAttacks){
+			if (enemyData.range >= distanceToPlayer) {
+			Instantiate (enemyData.explosaoDano, new Vector3(transform.position.x, transform.position.y+12, gameObject.transform.position.z), Quaternion.identity);
 			}
 			warrior.Attack (distanceToPlayer);
 			timer = 0f;
@@ -61,10 +59,10 @@ public class Tank : MonoBehaviour {
 			Destroy (col.gameObject);
 			healthBar.ChangeHealthvalue (warrior.fullhealth, warrior.health);
 			if (warrior.health <= 0) {
-				player.GetComponent<Player>().IncreasePoints(points);
+				player.GetComponent<Player>().IncreasePoints(pointsInGame);
 				if (Random.Range(0,100) < 10)
 					Instantiate (drop, gameObject.transform.position, Quaternion.identity);
-				Instantiate (explosao,new Vector3(transform.position.x, transform.position.y+12,transform.position.z), Quaternion.identity);
+			Instantiate (enemyData.explosao,new Vector3(transform.position.x, transform.position.y+12,transform.position.z), Quaternion.identity);
 				Destroy (gameObject);
 			} 
 

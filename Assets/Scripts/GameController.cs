@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour {
 	int countEnemies;
 	List<GameObject> enemies;
 	public EnemyData[] warriors;
+	public EnemyData[] archers;
+	public EnemyData[] assassins;
+	public EnemyData[] tanks;
+	public EnemyData[] carts;
 //	public List<EnemyData> achers;
 //	public List<EnemyData> assassins;
 //	public List<EnemyData> tanks;
@@ -39,7 +43,7 @@ public class GameController : MonoBehaviour {
 
 		tankInvoker = gameObject.AddComponent<InvokerEnemy> ();
 		tankInvoker.timeEnemy = 16;
-		tankInvoker.minRamdonTimerEnemy = 14.5f;
+		tankInvoker.minRamdonTimerEnemy = 13.5f;
 
 		cartInvoker = gameObject.AddComponent<InvokerEnemy> ();
 		cartInvoker.timeEnemy = 20;
@@ -66,6 +70,7 @@ public class GameController : MonoBehaviour {
 					}
 				} else {
 					if (warriorInvoker.timeEnemyInvoker >= warriorInvoker.timeEnemy) {
+
 						int enimiesInvoker = (int)((player.changelvl * 0.2) * 0.1f);
 						if (enimiesInvoker > 8){
 							enimiesInvoker = Random.Range(8,10);
@@ -78,6 +83,8 @@ public class GameController : MonoBehaviour {
 				archerInvoker.timeEnemyInvoker += Time.deltaTime;				
 				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.3)))) {
 					if (archerInvoker.timeEnemyInvoker >= archerInvoker.timeEnemy) {
+						archer.GetComponent<Archer> ().enemyData = archers [0];
+			
 						enemies.Add (archerInvoker.InvokeEnemy (archer));
 					}
 				} else {
@@ -94,6 +101,7 @@ public class GameController : MonoBehaviour {
 				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.1)))) {
 					assassinInvoker.timeEnemyInvoker += Time.deltaTime;
 					if (assassinInvoker.timeEnemyInvoker >= assassinInvoker.timeEnemy) {
+						assassin.GetComponent<Assassino> ().enemyData = assassins [0];
 						enemies.Add (assassinInvoker.InvokeEnemy (assassin));
 					}
 				}else {
@@ -108,6 +116,9 @@ public class GameController : MonoBehaviour {
 			}
 			if (player.lvl >= 8){
 				if (player.points < ((int)(player.changelvl - (player.changelvl * 0.4)))) {
+
+					tank.GetComponent<Tank> ().enemyData = tanks [0];
+
 					tankInvoker.timeEnemyInvoker += Time.deltaTime;
 					if (tankInvoker.timeEnemyInvoker >= tankInvoker.timeEnemy) {
 						enemies.Add (tankInvoker.InvokeEnemy (tank));
@@ -124,6 +135,8 @@ public class GameController : MonoBehaviour {
 				}
 			}
 			if (player.lvl >= 12){
+				cart.GetComponent<Cart>().enemyData = carts [0];
+
 				cartInvoker.timeEnemyInvoker += Time.deltaTime;
 				if (cartInvoker.timeEnemyInvoker >= cartInvoker.timeEnemy){
 					enemies.Add(cartInvoker.InvokeEnemy (cart));

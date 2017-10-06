@@ -75,9 +75,7 @@ public class GameStatusPlayer : MonoBehaviour {
 	}
 	public void IncreaseAttackSpeed(){
 		if (extraPoints != 0) {
-			if (player.timeBetweenAttacks < 0.1f) {
-				extraPoints = extraPoints;
-			} else {
+			if (player.timeBetweenAttacks > 0.1f) {
 				player.IncreaseAttackSpeed ();
 				attackSpeedText.text = player.timeBetweenAttacks.ToString("00.00");
 				extraPoints -= 1;

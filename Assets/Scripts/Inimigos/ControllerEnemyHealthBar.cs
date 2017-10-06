@@ -12,7 +12,7 @@ public class ControllerEnemyHealthBar : MonoBehaviour {
 
 	Vector2 positionHealthBar;
 
-	float healthValues;
+//	float healthValues;
 	// Use this for initialization
 
 	void Start () {
@@ -22,7 +22,7 @@ public class ControllerEnemyHealthBar : MonoBehaviour {
 		healthBarInstance.transform.SetParent (canvasHealthBar.transform, false);
 		healthBarInstance.transform.position = new Vector3(100,0,0);
 		healthSlider = healthBarInstance.transform.GetComponentInChildren<Slider> ();
-		healthValues = 0;
+//		healthValues = 0;
 	}
 	
 	// Update is called once per frame

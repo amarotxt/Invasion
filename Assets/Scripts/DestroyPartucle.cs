@@ -6,7 +6,7 @@ public class DestroyPartucle : MonoBehaviour {
 
 	private IEnumerator Start()
 	{
-		yield return new WaitForSeconds(GetComponentInChildren<ParticleSystem>().duration);
+		yield return new WaitForSeconds(GetComponentInChildren<ParticleSystem>().main.duration);
 		Destroy(gameObject); 
 	}
 }
